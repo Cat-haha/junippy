@@ -1,8 +1,14 @@
 body {
-  background-color: #e9dedb;
+  background-color: #fff9c4;
   margin: auto;
+  text-align: center;
   padding: 20px;
   color: #000000;
+  border: 4px groove #000000;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 1250px;
+  box-shadow: 0 0 200px #0004;
 }
 .list1 {
     font-family: "Outfit", serif;
@@ -70,7 +76,7 @@ hr {
 #fatCat {
   width: 20%;
   border: 10px groove blue;
-  border-radius: 10px
+  border-radius: 10px;
   padding: 1px;
 }
 #smugCat {
