@@ -53,13 +53,6 @@ hr {
   align-items: center;
   border: 3px double black;
 }
-#kanyeStaring{
-  width: 100%;
-  height: 240px;
-  position: absolute;
-  display: none;
-  z-index: 1000;
-}
 .weblabzeroone{
   background-color: white;
   color: black;
