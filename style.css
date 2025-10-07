@@ -1,77 +1,165 @@
+/* === General Page Styles === */
 body {
-  background-color: #fff9c4;
-  margin: auto;
+  background: linear-gradient(to right, #1565C0, #b92b27);
+  margin: 30px auto;
   text-align: center;
   padding: 20px;
-  color: #000000;
-  border: 4px groove #000000;
-  padding: 20px;
-  margin: 30px auto;
+  color: #FFD7CF;
   max-width: 1250px;
   box-shadow: 0 0 200px #0004;
+  font-size: medium;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
 }
-.list1 {
-    font-family: "Outfit", serif;
-    font-style: normal;
+
+a{color:white;}
+
+a:hover {
+  color: lightgreen;
+  text-shadow: 1px 1px 0 green;
+  border-radius: 4px;
 }
-hr {
-  border-color: grey;
+
+.list1 { font-family: "Outfit", serif; font-style: normal; }
+.title { color: white; font-size: 35px; }
+hr { border-color: rgb(213, 213, 213); }
+#credits { font-weight: normal; }
+
+/* === Sidebar Styles === */
+.linksDiv {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a90;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
 }
-#credits{
-  font-weight: normal;
+
+/* Collapse behavior */
+.linksDiv.hidden {
+  transform: translateX(-100%);
 }
-.tuxedoCat, .maineCoon, .americanShorthair, .russianBlue, .calico, .lavender{
-  background-color: lightgreen;
+
+/* Sidebar links */
+.linksDiv a {
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #f0f0f0;
+  font-weight: bold;
+  display: block;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.linksDiv a:hover {
+  background-color: #333;
+  color: #62cff4;
+  border-left-color: #62cff4;
+}
+
+/* === Toggle Button === */
+.toggleBtn {
+  position: fixed;
+  top: 50%;
+  left: 180px;
+  transform: translateY(-50%);
+  background-color: #62cff4;
+  color: #000;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  z-index: 2;
+  transition: left 0.3s ease;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Move toggle left when sidebar hidden */
+.linksDiv.hidden + .toggleBtn {
+  left: 0;
+}
+
+/* === Main Content === */
+.mainDiv {
+  margin-left: 160px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  border: 4px groove rgb(213, 213, 213);
+}
+
+/* When sidebar hidden, main expands fully */
+.linksDiv.hidden ~ .mainDiv {
+  margin-left: 0;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 10px;
+}
+
+/* === Sidebar Mobile Adjustments === */
+@media screen and (max-height: 450px) {
+  .linksDiv { padding-top: 15px; }
+  .linksDiv a { font-size: 18px; }
+}
+
+/* === Other Page-Specific Styles === */
+.tuxedoCat, .maineCoon, .americanShorthair, .russianBlue, .calico, .lavender {
+  background-color: gray;
   border: 3px solid green;
   margin: 5px;
   padding: 5px;
   width: 325px;
   display: flex;
   flex-direction: column;
-  align-items:center;
-  display: flex;
+  align-items: center;
 }
-#tuxedoCat, #maineCoon, #americanShorthair, #russianBlue, #calico{
-  width: 300px;
-}
-.catContainer{
+
+#tuxedoCat, #maineCoon, #americanShorthair, #russianBlue, #calico { width: 300px; }
+
+.catContainer {
   margin: 10px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-evenly;
-  background-color: darkgreen;
-  }
-.jesusOutfit{
-  width: 300px;
 }
-.jesusOutfitContainer, .gamesImages{
+
+.jesusOutfit { width: 300px; }
+
+.jesusOutfitContainer, .gamesImages {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border: 3px double black;
 }
-.weblabzeroone{
-  background-color: white;
-  color: black;
-}
-.weblabonepicture{
-  width: 700px;
-}
+
+.weblabzeroone { background-color: white; color: black; }
+.weblabonepicture { width: 700px; }
+
 #catWallpaper {
   width: 150px;
   border: 10px outset darkred;
   border-radius: 10px;
   padding: 2px;
 }
+
 #fatCat {
   width: 20%;
   border: 10px groove blue;
   border-radius: 10px;
   padding: 1px;
 }
+
 #smugCat {
   width: 20%;
   border: 10px solid green;
@@ -79,20 +167,23 @@ hr {
   padding: 3px;
   filter: drop-shadow(5px 5px 5px green);
 }
-.weblabeightpictures{
+
+.weblabeightpictures {
   width: 350px;
   display: flex;
   padding: 3px;
 }
-.terraria{
-  width: 300px;
-}
-.atabook{
-  width: 95vw;
-  height: 100vh;
-}
+
+.terraria { width: 300px; }
+.atabook { width: 95vw; height: 100vh; }
+
+.links { color: #64D17A; }
+
 a.links:hover {
-  color: blue;
-  text-shadow: 1px 1px 0 red;
+  color: lightgreen;
+  text-shadow: 1px 1px 0 green;
   border-radius: 4px;
+  font-size: 23px;
 }
+
+.antiCenter { text-align: left; }
